@@ -38,12 +38,12 @@ public class Estudiante
             
             while(auxiliar.getSiguiente() != null)
             {
-                System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre());
+                System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Notas: " + auxiliar.getNotaNodoE());
                 auxiliar = auxiliar.getSiguiente();
                 posicion++;
             }
             
-            System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre() + " Carné: " + auxiliar.getCarnet() );
+            System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre() + " Carné: " + auxiliar.getCarnet()+ " Notas: " + auxiliar.getNotaNodoE());
         }
     }
     public void agregarEstudiante(int carnet, String nombre)
@@ -51,7 +51,7 @@ public class Estudiante
         NodoEstudiante nuevoNodo = new NodoEstudiante();
         nuevoNodo.setCarnet(carnet);
         nuevoNodo.setNombre(nombre);
-        
+        nuevoNodo.setNotaNodoE(inicioLN);
         if(esVacia())
         {
             inicio = nuevoNodo;
@@ -71,5 +71,72 @@ public class Estudiante
         tamanio++;
     }
 
+    
+    
+    /*** 
+       
+     * ListaNotas
+       
+       ***/
+    private NodoListaNotas inicioLN;
+    private int tamanioLN;
+
+    public void ListaNotas()
+    {
+        inicioLN = null;
+        tamanioLN = 0;
+    }
+
+    public boolean esVaciaLN()
+    {
+        return inicioLN == null;
+    }
+    
+    public int getTamanioLN()
+    {
+        return tamanioLN;
+    }
+   
+    public void agregarNota(int valor)
+    {
+        NodoListaNotas nuevoNodo = new NodoListaNotas();
+        nuevoNodo.setNota(valor);
+        
+        if(esVaciaLN())
+        {
+            inicioLN = nuevoNodo;
+        }
+        else
+        {
+            nuevoNodo.setSiguiente(inicioLN);
+            inicioLN = nuevoNodo;
+        }
+        
+        tamanioLN++;
+    }
+    
+    
+    public void imprimirListaLN()
+    {
+        if(!esVacia())
+        {
+            NodoListaNotas auxiliar = inicioLN;
+            int posicion = 0;
+            
+            while(auxiliar.getSiguiente() != null)
+            {
+                System.out.println(" Valor: " + auxiliar.getNota()+ ",");
+                auxiliar = auxiliar.getSiguiente();
+                posicion++;
+            }
+            
+            System.out.println( " Valor: " + auxiliar.getNota());
+        }
+    }
+    
+    
+    
+    
+    
     
 }

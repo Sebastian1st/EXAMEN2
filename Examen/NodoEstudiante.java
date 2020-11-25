@@ -15,7 +15,7 @@ public class NodoEstudiante
     /**
      * Constructor for objects of class Nodo
      */
-    public void NodoEstudiante()
+    public void NodoEstudiante() 
     {
         this.nombre = "";
         this.carnet = 0;
@@ -23,14 +23,39 @@ public class NodoEstudiante
         //inicioLN = null;
         this.promedio = 0;
         this.inicioLN = null;
+        
         this.siguiente = null;
     }
-
+    
+    
+    
+    
     //get y set de la nota 
+    
+    //da el siguiente nodo 
+    public NodoListaNotas getNotaNodoE()
+    {
+        return inicioLN;
+    }
 
+    //obtiene el siguiente nodo usando
+    public void setNotaNodoE(NodoListaNotas inicioLN)
+    {
+        this.inicioLN = inicioLN;
+    }
+
+    /**public void obtenerLaNota()
+    {
+        ListaNotas conseguirNotas = new ListaNotas();
+        conseguirNotas.imprimirLista();
+    }
     
-    
-        
+    /**public void setNota()
+    {
+        ListaNotas conseguirNotas = new ListaNotas();
+        conseguirNotas.imprimirLista();
+    }
+    **/    
     
     //get y set nombre
     public String getNombre()

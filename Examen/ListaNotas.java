@@ -4,7 +4,7 @@
  *
  * @author (your name)
  * @version (a version number or a date)
- */
+ 
 public class ListaNotas
 {
     // instance variables - replace the example below with your own
@@ -55,12 +55,12 @@ public class ListaNotas
             
             while(auxiliar.getSiguiente() != null)
             {
-                System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getNota());
+                System.out.println(" Valor: " + auxiliar.getNota()+ ",");
                 auxiliar = auxiliar.getSiguiente();
                 posicion++;
             }
             
-            System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getNota());
+            System.out.println( " Valor: " + auxiliar.getNota());
         }
     }
     
@@ -71,3 +71,4 @@ public class ListaNotas
     
     
 }
+**/
