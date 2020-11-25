@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=NodoEstudiante
+comment1.params=
+comment1.target=void\ Nodo()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Nodo\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNombre()
+comment3.params=nombre
+comment3.target=void\ setNombre(java.lang.String)
+comment4.params=
+comment4.target=int\ getCarnet()
+comment5.params=carnet
+comment5.target=void\ setCarnet(int)
+comment6.params=
+comment6.target=float\ getPromedio()
+comment7.params=carnet
+comment7.target=void\ setPromedio(float)
+comment8.params=
+comment8.target=NodoEstudiante\ getSiguiente()
+comment9.params=siguiente
+comment9.target=void\ setSiguiente(NodoEstudiante)
+numComments=10

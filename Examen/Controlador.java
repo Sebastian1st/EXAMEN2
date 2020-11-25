@@ -7,23 +7,23 @@
  */
 public class Controlador
 {
-    private Lista iniciolp;
+    
     public static void controlador()
     {
         //Lista notas
         
         Estudiante lista = new Estudiante();
-        Lista listapequena = new Lista();
-        listapequena.agregarNota(70);
-        listapequena.agregarNota(60);
-        listapequena.agregarNota(80);
-        lista.agregarEstudiante(7718,"Sebastián Soto",  );
+        // Lista listapequena = new Lista();
+        //listapequena.agregarNota(70);
+        //listapequena.agregarNota(60);
+        //listapequena.agregarNota(80);
+        lista.agregarEstudiante(7718,"Sebastián Soto");
         lista.agregarEstudiante(2020,"Alhandrom Zhaborim");
         
         lista.imprimirLista();
         
         
-        listapequena.imprimirLista();
+        //listapequena.imprimirLista();
     
     }
 }

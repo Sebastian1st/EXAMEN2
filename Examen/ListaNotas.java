@@ -5,21 +5,21 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Lista
+public class ListaNotas
 {
     // instance variables - replace the example below with your own
-    private Nodo inicio;
+    private NodoListaNotas inicioLN;
     private int tamanio;
 
-    public void Lista()
+    public void ListaNotas()
     {
-        inicio = null;
+        inicioLN = null;
         tamanio = 0;
     }
 
     public boolean esVacia()
     {
-        return inicio == null;
+        return inicioLN == null;
     }
     
     public int getTamanio()
@@ -29,17 +29,17 @@ public class Lista
    
     public void agregarNota(int valor)
     {
-        Nodo nuevoNodo = new Nodo();
-        nuevoNodo.setValor(valor);
+        NodoListaNotas nuevoNodo = new NodoListaNotas();
+        nuevoNodo.setNota(valor);
         
         if(esVacia())
         {
-            inicio = nuevoNodo;
+            inicioLN = nuevoNodo;
         }
         else
         {
-            nuevoNodo.setSiguiente(inicio);
-            inicio = nuevoNodo;
+            nuevoNodo.setSiguiente(inicioLN);
+            inicioLN = nuevoNodo;
         }
         
         tamanio++;
@@ -50,17 +50,17 @@ public class Lista
     {
         if(!esVacia())
         {
-            Nodo auxiliar = inicio;
+            NodoListaNotas auxiliar = inicioLN;
             int posicion = 0;
             
             while(auxiliar.getSiguiente() != null)
             {
-                System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getValor());
+                System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getNota());
                 auxiliar = auxiliar.getSiguiente();
                 posicion++;
             }
             
-            System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getValor());
+            System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getNota());
         }
     }
     
