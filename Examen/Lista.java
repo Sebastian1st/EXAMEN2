@@ -15,6 +15,7 @@ public class Lista
     {
         inicio = null;
         tamanio = 0;
+        
     }
 
     public boolean esVacia()
@@ -26,7 +27,24 @@ public class Lista
     {
         return tamanio;
     }
-
+    
+    public void imprimirLista()
+    {
+        if(!esVacia())
+        {
+            NodoLista auxiliar = inicio;
+            int posicion = 0;
+            
+            while(auxiliar.getSiguiente() != null)
+            {
+                System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getNota());
+                auxiliar = auxiliar.getSiguiente();
+                posicion++;
+            }
+            
+            System.out.println("Posicion: " + posicion + " Valor: " + auxiliar.getNota());
+        }
+    }
     public void agregarNota(int valor)
     {
         NodoLista nuevoNodo = new NodoLista();

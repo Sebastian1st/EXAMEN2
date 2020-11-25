@@ -9,8 +9,16 @@ public class Controlador
 {
     public static void controlador()
     {
-            
-    
+        //Lista notas
+        Lista lista = new Lista();
+        
+        
+        lista.agregarNota(84);
+        
+        
+        
+        
+        lista.imprimirLista();
     
     }
 }
