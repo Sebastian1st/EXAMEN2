@@ -33,16 +33,16 @@ public class NodoLista
     }
     
     //get y set Notas
-    public String getNombre()
+    public Lista getNotas()
     {
-        return nombre;
+        return inicio;
     }
-    public void setNombre(String nombre)
+    public void setNotas(Lista inicio)
     {
-        this.nombre = nombre;
+        this.inicio = inicio;
     }
     
-    //get y set carnet
+    //get y set promedio
     
     
     

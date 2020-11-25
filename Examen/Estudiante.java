@@ -11,7 +11,7 @@ public class Estudiante
     // instance variables - replace the example below with your own
     private NodoLista inicio;
     private int tamanio;
-
+    private Lista iniciolp;
     public void Estudiante()
     {
         inicio = null;
@@ -43,14 +43,15 @@ public class Estudiante
                 posicion++;
             }
             
-            System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre() + " Carné: " + auxiliar.getCarnet());
+            System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre() + " Carné: " + auxiliar.getCarnet() + " Notas: " + auxiliar.getNotas());
         }
     }
-    public void agregarEstudiante(int carnet, String nombre)
+    public void agregarEstudiante(int carnet, String nombre ,Lista iniciolp)
     {
         NodoLista nuevoNodo = new NodoLista();
         nuevoNodo.setCarnet(carnet);
         nuevoNodo.setNombre(nombre);
+        nuevoNodo.setNotas(iniciolp);
         if(esVacia())
         {
             inicio = nuevoNodo;
