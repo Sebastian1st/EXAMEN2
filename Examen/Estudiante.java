@@ -1,33 +1,74 @@
 
 /**
- * Write a description of class Estudiante here.
+ * Write a description of class Lista here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
 public class Estudiante
+
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private NodoLista inicio;
+    private int tamanio;
 
-    /**
-     * Constructor for objects of class Estudiante
-     */
-    public Estudiante()
+    public void Estudiante()
     {
-        // initialise instance variables
-        x = 0;
+        inicio = null;
+        tamanio = 0;
+        
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
+    public boolean esVacia()
     {
-        // put your code here
-        return x + y;
+        return inicio == null;
     }
+
+    public int getTamanio()
+    {
+        return tamanio;
+    }
+    
+    public void imprimirLista()
+    {
+        if(!esVacia())
+        {
+            NodoLista auxiliar = inicio;
+            int posicion = 0;
+            
+            while(auxiliar.getSiguiente() != null)
+            {
+                System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre());
+                auxiliar = auxiliar.getSiguiente();
+                posicion++;
+            }
+            
+            System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre() + " Carné: " + auxiliar.getCarnet());
+        }
+    }
+    public void agregarEstudiante(int carnet, String nombre)
+    {
+        NodoLista nuevoNodo = new NodoLista();
+        nuevoNodo.setCarnet(carnet);
+        nuevoNodo.setNombre(nombre);
+        if(esVacia())
+        {
+            inicio = nuevoNodo;
+        }
+        else
+        {
+            NodoLista auxiliar = inicio;
+
+            while(auxiliar.getSiguiente() != null)
+            {
+                auxiliar = auxiliar.getSiguiente();
+            }
+
+            auxiliar.setSiguiente(nuevoNodo);
+        }
+
+        tamanio++;
+    }
+
+    
 }

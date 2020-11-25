@@ -4,6 +4,7 @@ public class NodoLista
     private float promedio ;
     private String nombre;
     private int carnet;
+    private Lista inicio;
     //private lista de notas
 
     /**
@@ -14,7 +15,9 @@ public class NodoLista
         this.nombre = "";
         this.carnet = 0;
         //this apuntando a la otra 
+        this.inicio=null;
         this.promedio = 0;
+       
         this.siguiente = null;
     }
     
@@ -28,7 +31,22 @@ public class NodoLista
     {
         this.nombre = nombre;
     }
-
+    
+    //get y set Notas
+    public String getNombre()
+    {
+        return nombre;
+    }
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+    
+    //get y set carnet
+    
+    
+    
+    
     //get y set carnet
     public int getCarnet()
     {
