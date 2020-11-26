@@ -1,116 +1,132 @@
-import javax.swing.JOptionPane;
-
-/**
- * Write a description of class Lista here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Estudiante
-
 {
-    // instance variables - replace the example below with your own
-    private NodoEstudiante inicio;
-    private int tamanio;  
-    
+    private Estudiante siguiente;
+    //OBJETOS    
+    //PROMEDIO
+    private float promedio ;
+    //NOMBRE
     private String nombre;
+    //CARNET
     private int carnet;
+    //NOTA 1 
     private int nota1;
+    //NOTA 2 
     private int nota2;
+    //NOTA 3
     private int nota3;
-    public void Estudiante()
+    
+    private int cantidadNotas = 3;
+    
+    
+    //str
+    /**
+     * Constructor for objects of class Nodo
+     */
+    public void Estudiante() 
     {
-        inicio = null;
-        tamanio = 0;
+        this.nombre = "";
+        this.carnet = 0;
+        this.nota1 = 0;
+        this.nota2 = 0; 
+        this.nota3 = 0;
+        this.promedio = 0;
         
-    }
-
-    public boolean esVacia()
-    {
-        return inicio == null;
-    }
-
-    public int getTamanio()
-    {
-        return tamanio;
+        this.siguiente = null;
     }
     
-    public void imprimirLista()
+    
+    
+    
+    
+    
+    //get y set de la nota 3
+    public int getNota3()
     {
-        if(!esVacia())
+        return nota3;
+    }
+
+    public void setNota3(int nota3)
+    {
+        this.nota3 = nota3;
+    }
+    //get y set de la nota 2
+    public int getNota2()
+    {
+        return nota2;
+    }
+
+    public void setNota2(int nota2)
+    {
+        this.nota2 = nota2;
+    }
+    //get y set de la nota 1
+    
+    public int getNota()
+    {
+        return nota1;
+    }
+
+    public void setNota(int nota1)
+    {
+        this.nota1 = nota1;
+    }
+    
+    
+    //get y set nombre
+    public String getNombre()
+    {
+        return nombre;
+    }
+
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+
+    //get y set promedio
+    
+    
+    //get y set carnet
+    public int getCarnet()
+    {
+        return carnet;
+    }
+
+    public void setCarnet(int carnet)
+    {
+        this.carnet = carnet;
+    }
+
+    
+    
+    public float calcProm(int divisor)
+    {
+        if (divisor== cantidadNotas)
         {
-            NodoEstudiante auxiliar = inicio;
-            
-            int posicion = 0;
-            
-            while(auxiliar.getSiguiente() != null)
-            {
-                System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3());
-                auxiliar = auxiliar.getSiguiente();
-                posicion++;
-            }
-            
-            System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre() + " Carné: " + auxiliar.getCarnet()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3());
+            return (nota1+nota2+nota3)/divisor;
         }
+        return calcProm(divisor+1);
     }
-    
-    public void pedirNombre()
-    { 
-        nombre = JOptionPane.showInputDialog("Digite el nombre del estudiante");
-    }
-    public void pedirCarnet()
+    //get y set promedio
+    public float getPromedio()
     {
-        carnet = Integer.parseInt(JOptionPane.showInputDialog("Digite el carnet del estudiante"));
-    }
-    public void pedirNota1()
-    {
-        nota1 = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota 1 del estudiante"));
-    }
-    public void pedirNota2()
-    {
-        nota2 = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota 2 del estudiante"));
-    }
-    public void pedirNota3()
-    {
-        nota3 = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota 3 del estudiante"));
-    }
-    public void agregarEstudiante()
-    {
-        NodoEstudiante nuevoNodo = new NodoEstudiante();
-        nuevoNodo.setCarnet(carnet);
-        nuevoNodo.setNombre(nombre);
-        nuevoNodo.setNota(nota1);
-        nuevoNodo.setNota2(nota2);
-        nuevoNodo.setNota3(nota3);
-        if(esVacia())
-        {
-            inicio = nuevoNodo;
-        }
-        else
-        {
-            NodoEstudiante auxiliar = inicio;
-
-            while(auxiliar.getSiguiente() != null)
-            {
-                auxiliar = auxiliar.getSiguiente();
-            }
-
-            auxiliar.setSiguiente(nuevoNodo);
-        }
-
-        tamanio++;
+        return promedio;
     }
 
-    
-    
-    /*** 
-       
-     * ListaNotas
-       
-       ***/
-    
-    
-    
-    
-    
+    public void setPromedio(float promedio)
+    {
+        this.promedio = promedio;
+    }
+
+    //da el siguiente nodo 
+    public Estudiante  getSiguiente()
+    {
+        return siguiente;
+    }
+
+    //obtiene el siguiente nodo usando
+    public void setSiguiente(Estudiante siguiente)
+    {
+        this.siguiente = siguiente;
+    }
 }

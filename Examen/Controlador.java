@@ -11,9 +11,8 @@ public class Controlador
     public static void controlador()
     {
         //Lista notas
-        Estudiante estudiante = new Estudiante();
-
-        
+        Grupo estudiante = new Grupo();
+        Estudiante nodoestudied = new Estudiante();
         boolean volveralmenu= true;
         while (volveralmenu== true){
             //Solicitar datos
@@ -22,29 +21,24 @@ public class Controlador
             estudiante.pedirNota1();
             estudiante.pedirNota2();
             estudiante.pedirNota3();
+            estudiante.agregarEstudiante();
             ///ACABA SOLICITAR DATOS
-            Object opcionmenu = JOptionPane.showInputDialog(null,"Examen 2 ",
-                    "Desea continuar introduciendo datos?", JOptionPane.QUESTION_MESSAGE, null,
-                    new Object[] { "Seleccione una opción","Sí","No"  },
-                    "Seleccione");
+            Object opcionmenu = JOptionPane.showInputDialog(null,"Desea continuar introduciendo datos? ",
+                    "Examen 2", JOptionPane.QUESTION_MESSAGE, null,
+                    new Object[] { "Sí","No"},
+                    "Sí");
 
             if (opcionmenu == "Sí"){
                 
             }
             if (opcionmenu == "No"){
-                JOptionPane.showMessageDialog(null,"Gracias por usarme :D" );
+                
                 volveralmenu=false;
             }
         }
-        //Solicitar datos
-        estudiante.pedirNombre();
-        estudiante.pedirCarnet();
-        estudiante.pedirNota1();
-        estudiante.pedirNota2();
-        estudiante.pedirNota3();
-        ///ACABA SOLICITAR DATOS
-
-        estudiante.agregarEstudiante();
+        
+        
+        
         estudiante.imprimirLista();
 
     }
