@@ -18,7 +18,7 @@ public class Grupo
     private int nota1;
     private int nota2;
     private int nota3;
-    
+
     final int divisor = 1;
     private float prom;
     public void Estudiante()
@@ -56,11 +56,69 @@ public class Grupo
             System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre() + " Carné: " + auxiliar.getCarnet()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3()+" Promedio: " + auxiliar.getPromedio());
         }
     }
-    public void imprimirIguales(float promedio){}
-    
-    public void imprimirMayores(float promedio){}
-    
-    public void imprimirMenores(float promedio){}
+
+    public void imprimirIguales(float promedio){
+
+        if(!esVacia())
+        {
+            Estudiante auxiliar = inicio;
+
+            int posicion = 0;
+
+            while(auxiliar.getSiguiente() != null)
+            {
+                if (auxiliar.getPromedio() == promedio){
+
+                    System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3()+" Promedio: " + auxiliar.getPromedio());
+
+                }
+                auxiliar = auxiliar.getSiguiente();
+                posicion++;
+
+            }
+        }
+
+    }
+
+    public void imprimirMayores(float promedio){
+        if(!esVacia())
+        {
+            Estudiante auxiliar = inicio;
+
+            int posicion = 0;
+
+            while(auxiliar.getSiguiente() != null)
+            {
+                if (auxiliar.getPromedio() > promedio){
+
+                    System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3()+" Promedio: " + auxiliar.getPromedio());
+
+                }
+                auxiliar = auxiliar.getSiguiente();
+                posicion++;
+            }
+        }
+    }
+
+    public void imprimirMenores(float promedio){
+        if(!esVacia())
+        {
+            Estudiante auxiliar = inicio;
+
+            int posicion = 0;
+
+            while(auxiliar.getSiguiente() != null)
+            {
+                if (auxiliar.getPromedio() < promedio){
+
+                    System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3()+" Promedio: " + auxiliar.getPromedio());
+
+                }
+                auxiliar = auxiliar.getSiguiente();
+                posicion++;
+            }
+        }
+    }
 
     public void pedirNombre()
     { 
@@ -116,13 +174,8 @@ public class Grupo
         tamanio++;
     }
 
-    
     /*** 
-
      * ListaNotas
-
      ***/
 
-    
-    
 }

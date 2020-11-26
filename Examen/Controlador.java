@@ -36,8 +36,30 @@ public class Controlador
                 volveralmenu=false;
             }
         }
-        
-        
+        estudiante.imprimirLista();
+        volveralmenu = true;   
+        while (volveralmenu== true){
+            Object opcionmenu = JOptionPane.showInputDialog(null,"Opciones ",
+                    "Examen 2", JOptionPane.QUESTION_MESSAGE, null,
+                    new Object[] { "Imprimir Menores","Imprimir Mayores","Imprimir Iguales","Salir"},
+                    "Sí");
+
+            if (opcionmenu == "Imprimir Menores"){
+                int prom = Integer.parseInt(JOptionPane.showInputDialog("Digite el Promedio limitante"));
+                estudiante.imprimirMenores(prom);
+            }
+            if (opcionmenu == "Imprimir Mayores"){
+                int prom = Integer.parseInt(JOptionPane.showInputDialog("Digite el Promedio limitante"));
+                estudiante.imprimirMayores(prom);
+            }
+            if (opcionmenu == "Imprimir Iguales"){
+                int prom = Integer.parseInt(JOptionPane.showInputDialog("Digite el Promedio que busca"));
+                estudiante.imprimirIguales(prom);
+            }
+            if (opcionmenu == "Salir"){
+                 volveralmenu=false;
+            }
+        }
         
         estudiante.imprimirLista();
 
