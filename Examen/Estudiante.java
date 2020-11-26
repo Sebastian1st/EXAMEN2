@@ -34,6 +34,7 @@ public class Estudiante
         if(!esVacia())
         {
             NodoEstudiante auxiliar = inicio;
+            
             int posicion = 0;
             
             while(auxiliar.getSiguiente() != null)

@@ -21,7 +21,7 @@ public class Controlador
         //lista.agregarEstudiante(2020,"Alhandrom Zhaborim");
         
         lista.imprimirLista();
-        
+        lista.imprimirListaLN();
         
         //.imprimirLista();
     

@@ -11,7 +11,9 @@ public class NodoEstudiante
     //NODO DE LA LISTA DE NOTAS 
     private NodoListaNotas inicioLN;    
     //private lista de notas
-
+    
+    
+    //str
     /**
      * Constructor for objects of class Nodo
      */
@@ -37,7 +39,7 @@ public class NodoEstudiante
     {
         return inicioLN;
     }
-
+  
     //obtiene el siguiente nodo usando
     public void setNotaNodoE(NodoListaNotas inicioLN)
     {
