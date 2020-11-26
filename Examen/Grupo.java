@@ -12,7 +12,7 @@ public class Grupo
     // instance variables - replace the example below with your own
     private Estudiante inicio;
     private int tamanio;  
-
+    private NodoArbol raiz;
     private String nombre;
     private int carnet;
     private int nota1;
@@ -21,13 +21,55 @@ public class Grupo
 
     final int divisor = 1;
     private float prom;
+    
     public void Estudiante()
     {
         inicio = null;
         tamanio = 0;
-
+        raiz = null;
     }
-
+    public NodoArbol getRaiz()
+    {
+        return raiz;
+    }
+    
+    private NodoArbol agregarRecursivo(NodoArbol actual, int valor)
+    {
+        if(actual == null)
+        {
+            return new Nodo(valor);
+        }
+        else if( valor < actual.getValor() )
+        {
+            actual.setHijoIzquierdo(agregarRecursivo(actual.getHijoIzquierdo(), valor));
+        }
+        else if( valor > actual.getValor() )
+        {
+            actual.setHijoDerecho(agregarRecursivo(actual.getHijoDerecho(), valor));
+        }
+        else
+        {
+            return actual;
+        }
+        
+        return actual;
+    }
+    
+    public void agregarHijo(int valor)
+    {
+        raiz = agregarRecursivo(raiz, valor);
+    }    
+    
+    public void recorrerEnOrden(NodoArbol nodoActual)
+    {
+        if( nodoActual != null)
+        {
+            recorrerEnOrden(nodoActual.getHijoIzquierdo());
+            System.out.print(" " + nodoActual.getValor());
+            recorrerEnOrden(nodoActual.getHijoDerecho());
+        }
+    }
+    
     public boolean esVacia()
     {
         return inicio == null;
@@ -76,6 +118,11 @@ public class Grupo
                 posicion++;
 
             }
+            if (auxiliar.getPromedio() == promedio){
+
+                    System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3()+" Promedio: " + auxiliar.getPromedio());
+
+                }
         }
 
     }
@@ -97,6 +144,11 @@ public class Grupo
                 auxiliar = auxiliar.getSiguiente();
                 posicion++;
             }
+            if (auxiliar.getPromedio() > promedio){
+
+                    System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3()+" Promedio: " + auxiliar.getPromedio());
+
+                }
         }
     }
 
@@ -117,6 +169,11 @@ public class Grupo
                 auxiliar = auxiliar.getSiguiente();
                 posicion++;
             }
+            if (auxiliar.getPromedio() < promedio){
+
+                    System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3()+" Promedio: " + auxiliar.getPromedio());
+
+                }
         }
     }
 
