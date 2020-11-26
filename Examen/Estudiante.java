@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 /**
  * Write a description of class Lista here.
@@ -12,6 +13,11 @@ public class Estudiante
     private NodoEstudiante inicio;
     private int tamanio;  
     
+    private String nombre;
+    private int carnet;
+    private int nota1;
+    private int nota2;
+    private int nota3;
     public void Estudiante()
     {
         inicio = null;
@@ -39,20 +45,43 @@ public class Estudiante
             
             while(auxiliar.getSiguiente() != null)
             {
-                System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Notas: " + auxiliar.getNotaNodoE());
+                System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre()+ " Carné: " + auxiliar.getNombre()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3());
                 auxiliar = auxiliar.getSiguiente();
                 posicion++;
             }
             
-            System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre() + " Carné: " + auxiliar.getCarnet()+ " Notas: " + auxiliar.getNotaNodoE());
+            System.out.println("Posicion: " + posicion + " Nombre: " + auxiliar.getNombre() + " Carné: " + auxiliar.getCarnet()+ " Nota 1: " + auxiliar.getNota()+ " Nota 2: " + auxiliar.getNota2()+ " Nota 3: " + auxiliar.getNota3());
         }
     }
-    public void agregarEstudiante(int carnet, String nombre)
+    
+    public void pedirNombre()
+    { 
+        nombre = JOptionPane.showInputDialog("Digite el nombre del estudiante");
+    }
+    public void pedirCarnet()
+    {
+        carnet = Integer.parseInt(JOptionPane.showInputDialog("Digite el carnet del estudiante"));
+    }
+    public void pedirNota1()
+    {
+        nota1 = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota 1 del estudiante"));
+    }
+    public void pedirNota2()
+    {
+        nota2 = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota 2 del estudiante"));
+    }
+    public void pedirNota3()
+    {
+        nota3 = Integer.parseInt(JOptionPane.showInputDialog("Digite la nota 3 del estudiante"));
+    }
+    public void agregarEstudiante()
     {
         NodoEstudiante nuevoNodo = new NodoEstudiante();
         nuevoNodo.setCarnet(carnet);
         nuevoNodo.setNombre(nombre);
-        nuevoNodo.setNotaNodoE(inicioLN);
+        nuevoNodo.setNota(nota1);
+        nuevoNodo.setNota2(nota2);
+        nuevoNodo.setNota3(nota3);
         if(esVacia())
         {
             inicio = nuevoNodo;
@@ -79,62 +108,6 @@ public class Estudiante
      * ListaNotas
        
        ***/
-    private NodoListaNotas inicioLN;
-    private int tamanioLN;
-
-    public void ListaNotas()
-    {
-        inicioLN = null;
-        tamanioLN = 0;
-    }
-
-    public boolean esVaciaLN()
-    {
-        return inicioLN == null;
-    }
-    
-    public int getTamanioLN()
-    {
-        return tamanioLN;
-    }
-   
-    public void agregarNota(int valor)
-    {
-        NodoListaNotas nuevoNodo = new NodoListaNotas();
-        nuevoNodo.setNota(valor);
-        
-        if(esVaciaLN())
-        {
-            inicioLN = nuevoNodo;
-        }
-        else
-        {
-            nuevoNodo.setSiguiente(inicioLN);
-            inicioLN = nuevoNodo;
-        }
-        
-        tamanioLN++;
-    }
-    
-    
-    public void imprimirListaLN()
-    {
-        if(!esVacia())
-        {
-            NodoListaNotas auxiliar = inicioLN;
-            int posicion = 0;
-            
-            while(auxiliar.getSiguiente() != null)
-            {
-                System.out.println(" Valor: " + auxiliar.getNota()+ ",");
-                auxiliar = auxiliar.getSiguiente();
-                posicion++;
-            }
-            
-            System.out.println( " Valor: " + auxiliar.getNota());
-        }
-    }
-    
     
     
     

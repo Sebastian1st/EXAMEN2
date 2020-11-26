@@ -1,4 +1,4 @@
-
+import javax.swing.JOptionPane;
 /**
  * Write a description of class Controlador here.
  *
@@ -11,19 +11,41 @@ public class Controlador
     public static void controlador()
     {
         //Lista notas
+        Estudiante estudiante = new Estudiante();
+
         
-        Estudiante lista = new Estudiante();
-         //ListaNotas listapequena = new ListaNotas();
-        lista.agregarNota(70);
-        lista.agregarNota(60);
-        lista.agregarNota(80);
-        lista.agregarEstudiante(7718,"Sebastián Soto");
-        //lista.agregarEstudiante(2020,"Alhandrom Zhaborim");
-        
-        lista.imprimirLista();
-        lista.imprimirListaLN();
-        
-        //.imprimirLista();
-    
+        boolean volveralmenu= true;
+        while (volveralmenu== true){
+            //Solicitar datos
+            estudiante.pedirNombre();
+            estudiante.pedirCarnet();
+            estudiante.pedirNota1();
+            estudiante.pedirNota2();
+            estudiante.pedirNota3();
+            ///ACABA SOLICITAR DATOS
+            Object opcionmenu = JOptionPane.showInputDialog(null,"Examen 2 ",
+                    "Desea continuar introduciendo datos?", JOptionPane.QUESTION_MESSAGE, null,
+                    new Object[] { "Seleccione una opción","Sí","No"  },
+                    "Seleccione");
+
+            if (opcionmenu == "Sí"){
+                
+            }
+            if (opcionmenu == "No"){
+                JOptionPane.showMessageDialog(null,"Gracias por usarme :D" );
+                volveralmenu=false;
+            }
+        }
+        //Solicitar datos
+        estudiante.pedirNombre();
+        estudiante.pedirCarnet();
+        estudiante.pedirNota1();
+        estudiante.pedirNota2();
+        estudiante.pedirNota3();
+        ///ACABA SOLICITAR DATOS
+
+        estudiante.agregarEstudiante();
+        estudiante.imprimirLista();
+
     }
 }

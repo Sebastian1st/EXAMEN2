@@ -8,10 +8,12 @@ public class NodoEstudiante
     private String nombre;
     //CARNET
     private int carnet;
-    //NODO DE LA LISTA DE NOTAS 
-    private NodoListaNotas inicioLN;    
-    //private lista de notas
-    
+    //NOTA 1 
+    private int nota1;
+    //NOTA 2 
+    private int nota2;
+    //NOTA 3
+    private int nota3;
     
     //str
     /**
@@ -21,43 +23,46 @@ public class NodoEstudiante
     {
         this.nombre = "";
         this.carnet = 0;
-        //this apuntando a la otra 
-        //inicioLN = null;
+        this.nota1 = 0;
+        this.nota2 = 0; 
+        this.nota3 = 0;
         this.promedio = 0;
-        this.inicioLN = null;
         
         this.siguiente = null;
     }
     
-    
-    
-    
-    //get y set de la nota 
-    
-    //da el siguiente nodo 
-    public NodoListaNotas getNotaNodoE()
+    //get y set de la nota 3
+    public int getNota3()
     {
-        return inicioLN;
-    }
-  
-    //obtiene el siguiente nodo usando
-    public void setNotaNodoE(NodoListaNotas inicioLN)
-    {
-        this.inicioLN = inicioLN;
+        return nota3;
     }
 
-    /**public void obtenerLaNota()
+    public void setNota3(int nota3)
     {
-        ListaNotas conseguirNotas = new ListaNotas();
-        conseguirNotas.imprimirLista();
+        this.nota3 = nota3;
+    }
+    //get y set de la nota 2
+    public int getNota2()
+    {
+        return nota2;
+    }
+
+    public void setNota2(int nota2)
+    {
+        this.nota2 = nota2;
+    }
+    //get y set de la nota 1
+    
+    public int getNota()
+    {
+        return nota1;
+    }
+
+    public void setNota(int nota1)
+    {
+        this.nota1 = nota1;
     }
     
-    /**public void setNota()
-    {
-        ListaNotas conseguirNotas = new ListaNotas();
-        conseguirNotas.imprimirLista();
-    }
-    **/    
     
     //get y set nombre
     public String getNombre()
